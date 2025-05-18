@@ -17,17 +17,25 @@ public class WebSecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(11);
     }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**","/auth/**","/docs", "/swagger-ui.html", "/swagger-ui/index.html","/api-docs","/error", "/actuator/**").permitAll()
+                        .requestMatchers(
+                                "/v3/api-docs/**",        // OpenAPI JSON
+                                "/swagger-ui/**",         // Swagger UI assets
+                                "/swagger-ui.html",       // Swagger UI HTML
+                                "/auth/**",
+                                "/docs",
+                                "/error",
+                                "/actuator/**"
+                        ).permitAll()
                         .requestMatchers("/api/**").authenticated()
                 )
                 .httpBasic(basic -> basic.init(http));
 
         return http.build();
     }
+
 }
