@@ -11,7 +11,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @OpenAPIDefinition(
-    info = @Info(title = "Electro-Route-Backend", version = "v1")
+        info = @Info(title = "ElectroRoute API",
+                version = "1.0",
+                description = "API documentation for ElectroRoute – EV Charging Station Locator")
+
 )
 public class OpenApiConfig {
 }
