@@ -58,8 +58,11 @@ public class UserInfo {
     private Set<UserRoles> roles = new HashSet<>();
 
 
-
-
-
-
+    public void update(UserInfo user) {
+        this.name = user.name;
+        this.address =  user.address;
+        this.latitude = user.latitude;
+        this.longitude = user.longitude;
+        this.vehicle = user.vehicle;
+    }
 }

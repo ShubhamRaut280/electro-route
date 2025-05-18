@@ -14,4 +14,6 @@ public interface ChargingStationService {
     List<ChargingStation> getStationList();
 
     Optional<ChargingStation> getStationById(Integer id);
+
+    List<ChargingStation> getNearbyStations(double lat, double lng, double radius);
 }

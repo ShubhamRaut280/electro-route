@@ -24,18 +24,24 @@ public class ChargingStationController {
     }
 
     @GetMapping("/all")
-    public List<ChargingStation> getStationList(){
+    public List<ChargingStation> getStationList() {
         return chargingStationService.getStationList();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getUser(@PathVariable Integer id){
+    public ResponseEntity<?> getUser(@PathVariable Integer id) {
         Optional<ChargingStation> stationOptional = chargingStationService.getStationById(id);
-        if(stationOptional.isEmpty()){
+        if (stationOptional.isEmpty()) {
             return new ResponseEntity<>("Charging Station Not found", HttpStatus.NOT_FOUND);
-        }else {
+        } else {
             return new ResponseEntity<>(stationOptional.get(), HttpStatus.OK);
         }
+    }
+
+    @GetMapping("/nearby")
+    public ResponseEntity<List<ChargingStation>> getNearbyStations(@RequestParam double lat, @RequestParam double lng,@RequestParam(defaultValue = "2") double radiusKm)
+    {
+        return new ResponseEntity<>(chargingStationService.getNearbyStations(lat, lng, radiusKm), HttpStatus.OK);
     }
 
 }
