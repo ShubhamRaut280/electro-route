@@ -43,7 +43,7 @@ public class AuthController
     private UserDetailsServiceImpl userDetailsService;
 
     @PostMapping("/signup")
-    public ResponseEntity SignUp(@RequestBody UserInfoDto userInfoDto){
+    public ResponseEntity<?> SignUp(@RequestBody UserInfoDto userInfoDto){
 
         if (userInfoDto.getUsername() == null || userInfoDto.getUsername().isEmpty()) {
             return new ResponseEntity<>("Email cannot be empty", HttpStatus.BAD_REQUEST);
@@ -67,13 +67,14 @@ public class AuthController
             String jwtToken = jwtService.GenerateToken(userInfoDto.getUsername());
             return new ResponseEntity<>(new JwtResponseDTO(jwtToken, refreshToken.getToken()), HttpStatus.OK);
         }catch (Exception ex){
-            return new ResponseEntity<>("Exception in User Service", HttpStatus.INTERNAL_SERVER_ERROR);
+            ex.printStackTrace();
+            return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
 
     @PostMapping("/login")
-    public ResponseEntity AuthenticateAndGetToken(@RequestBody AuthRequestDTO authRequestDTO){
+    public ResponseEntity<?> AuthenticateAndGetToken(@RequestBody AuthRequestDTO authRequestDTO){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequestDTO.getUsername(), authRequestDTO.getPassword()));
         if(authentication.isAuthenticated()){
             RefreshToken refreshToken = refreshTokenService.createRefreshToken(authRequestDTO.getUsername());
@@ -87,7 +88,7 @@ public class AuthController
     }
 
     @PostMapping("/refreshToken")
-    public ResponseEntity refreshToken(@RequestBody RefreshTokenRequestDTO refreshTokenRequestDTO){
+    public ResponseEntity<?> refreshToken(@RequestBody RefreshTokenRequestDTO refreshTokenRequestDTO){
 
         Optional<RefreshToken> refreshToken = refreshTokenService.findByToken(refreshTokenRequestDTO.getToken());
 

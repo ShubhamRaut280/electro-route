@@ -17,10 +17,10 @@ import java.util.Set;
 @Builder
 public class UserInfo {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     @Schema(hidden = true)
-    private String userId;
+    private Long userId;
 
 
 

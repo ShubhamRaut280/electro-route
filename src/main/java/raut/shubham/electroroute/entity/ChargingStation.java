@@ -1,5 +1,7 @@
 package raut.shubham.electroroute.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,9 +21,11 @@ public class ChargingStation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(hidden = true)
     private Long stationId;
 
     @OneToOne
+    @JsonIgnore
     private UserInfo owner;
 
     private String stationName;

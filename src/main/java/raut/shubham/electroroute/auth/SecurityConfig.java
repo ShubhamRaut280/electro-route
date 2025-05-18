@@ -34,17 +34,15 @@ public class SecurityConfig {
                 .cors(CorsConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/v3/api-docs/**",        // OpenAPI JSON
                                 "/swagger-ui/**",         // Swagger UI assets
-                                "/swagger-ui.html",       // Swagger UI HTML
+                                "/swagger-ui.html",
+                                "/swagger-ui/index.html",
                                 "/auth/**",
                                 "/docs",
-                                "/error",
                                 "/actuator/**"
-                                ,"/**"
+
                         ).permitAll()
                         .requestMatchers("/api/**").authenticated()
-                        .anyRequest().authenticated()
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .httpBasic(Customizer.withDefaults())
@@ -52,6 +50,7 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider())
                 .build();
     }
+
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
