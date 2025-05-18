@@ -1,4 +1,4 @@
-package raut.shubham.electroroute.auth;
+package raut.shubham.electroroute.config.auth;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
