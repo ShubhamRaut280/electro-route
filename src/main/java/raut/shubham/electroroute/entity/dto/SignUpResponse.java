@@ -1,4 +1,4 @@
-package raut.shubham.electroroute.payload;
+package raut.shubham.electroroute.entity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

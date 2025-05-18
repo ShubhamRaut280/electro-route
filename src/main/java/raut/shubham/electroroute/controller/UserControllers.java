@@ -1,15 +1,16 @@
-package raut.shubham.electroroute.controllers;
+package raut.shubham.electroroute.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import raut.shubham.electroroute.models.User;
-import raut.shubham.electroroute.services.UserService;
+import raut.shubham.electroroute.entity.User;
+import raut.shubham.electroroute.service.UserService;
 
 import java.util.Optional;
 
 @RestController
+
 public class UserControllers {
 
     @Autowired

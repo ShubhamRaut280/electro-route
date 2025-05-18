@@ -1,8 +1,8 @@
-package raut.shubham.electroroute.services;
+package raut.shubham.electroroute.service;
 
-import raut.shubham.electroroute.models.User;
-import raut.shubham.electroroute.payload.SignInRequest;
-import raut.shubham.electroroute.payload.SignupRequest;
+import raut.shubham.electroroute.entity.User;
+import raut.shubham.electroroute.entity.dto.SignInRequest;
+import raut.shubham.electroroute.entity.dto.SignupRequest;
 
 import java.util.Optional;
 

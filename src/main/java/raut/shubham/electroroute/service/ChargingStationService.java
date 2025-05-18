@@ -1,7 +1,7 @@
-package raut.shubham.electroroute.services;
+package raut.shubham.electroroute.service;
 
 
-import raut.shubham.electroroute.models.ChargingStation;
+import raut.shubham.electroroute.entity.ChargingStation;
 
 import java.util.List;
 

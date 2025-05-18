@@ -1,10 +1,9 @@
-package raut.shubham.electroroute.services;
+package raut.shubham.electroroute.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import raut.shubham.electroroute.models.ChargingStation;
-import raut.shubham.electroroute.repositories.ChargingStationRepository;
+import raut.shubham.electroroute.entity.ChargingStation;
+import raut.shubham.electroroute.repository.ChargingStationRepository;
 
 import java.util.List;
 

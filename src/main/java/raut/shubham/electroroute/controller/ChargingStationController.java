@@ -1,9 +1,9 @@
-package raut.shubham.electroroute.controllers;
+package raut.shubham.electroroute.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import raut.shubham.electroroute.models.ChargingStation;
-import raut.shubham.electroroute.services.ChargingStationService;
+import raut.shubham.electroroute.entity.ChargingStation;
+import raut.shubham.electroroute.service.ChargingStationService;
 
 import java.util.List;
 

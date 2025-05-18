@@ -1,7 +1,6 @@
-package raut.shubham.electroroute.payload;
+package raut.shubham.electroroute.entity.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

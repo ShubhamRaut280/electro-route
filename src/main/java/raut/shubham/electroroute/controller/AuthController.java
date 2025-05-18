@@ -1,4 +1,4 @@
-package raut.shubham.electroroute.controllers;
+package raut.shubham.electroroute.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import raut.shubham.electroroute.error.EmailAlreadyUseException;
-import raut.shubham.electroroute.models.User;
-import raut.shubham.electroroute.payload.SignInRequest;
-import raut.shubham.electroroute.payload.SignInResponse;
-import raut.shubham.electroroute.payload.SignUpResponse;
-import raut.shubham.electroroute.payload.SignupRequest;
-import raut.shubham.electroroute.repositories.UserRepository;
-import raut.shubham.electroroute.services.UserService;
+import raut.shubham.electroroute.entity.User;
+import raut.shubham.electroroute.entity.dto.SignInRequest;
+import raut.shubham.electroroute.entity.dto.SignInResponse;
+import raut.shubham.electroroute.entity.dto.SignUpResponse;
+import raut.shubham.electroroute.entity.dto.SignupRequest;
+import raut.shubham.electroroute.repository.UserRepository;
+import raut.shubham.electroroute.service.UserService;
 
 @RestController
 @RequestMapping("/auth")

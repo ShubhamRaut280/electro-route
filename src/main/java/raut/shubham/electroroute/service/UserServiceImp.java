@@ -1,12 +1,12 @@
-package raut.shubham.electroroute.services;
+package raut.shubham.electroroute.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import raut.shubham.electroroute.models.User;
-import raut.shubham.electroroute.payload.SignInRequest;
-import raut.shubham.electroroute.payload.SignupRequest;
-import raut.shubham.electroroute.repositories.UserRepository;
+import raut.shubham.electroroute.entity.User;
+import raut.shubham.electroroute.entity.dto.SignInRequest;
+import raut.shubham.electroroute.entity.dto.SignupRequest;
+import raut.shubham.electroroute.repository.UserRepository;
 
 import java.util.Optional;
 

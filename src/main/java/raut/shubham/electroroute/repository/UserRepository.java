@@ -1,8 +1,8 @@
-package raut.shubham.electroroute.repositories;
+package raut.shubham.electroroute.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
-import raut.shubham.electroroute.models.User;
+import raut.shubham.electroroute.entity.User;
 
 @Repository
 public interface UserRepository extends MongoRepository<User,String> {

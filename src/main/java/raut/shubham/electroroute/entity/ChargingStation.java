@@ -1,4 +1,4 @@
-package raut.shubham.electroroute.models;
+package raut.shubham.electroroute.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
