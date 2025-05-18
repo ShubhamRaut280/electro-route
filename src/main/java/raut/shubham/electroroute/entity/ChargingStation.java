@@ -1,21 +1,30 @@
 package raut.shubham.electroroute.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 @Data
 @Builder
-@Document(collection = "ChargingStation")
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
+@RequiredArgsConstructor
+
+@Entity
+@Table(name = "charging_station")
 public class ChargingStation {
 
     @Id
-    private Integer stationId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String stationId;
+
+    @OneToOne
+    private UserInfo owner;
 
     private String stationName;
 

@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface ChargingStationService {
 
 
-    Integer postStation(ChargingStation chargingStation);
+    String postStation(ChargingStation chargingStation);
 
     List<ChargingStation> getStationList();
 

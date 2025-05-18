@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import raut.shubham.electroroute.entity.ChargingStation;
-import raut.shubham.electroroute.entity.User;
 import raut.shubham.electroroute.service.ChargingStationService;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class ChargingStationController {
     private ChargingStationService chargingStationService;
 
     @PostMapping("/add")
-    public Integer postStation(@RequestBody ChargingStation chargingStation) {
+    public String postStation(@RequestBody ChargingStation chargingStation) {
         return chargingStationService.postStation(chargingStation);
     }
 

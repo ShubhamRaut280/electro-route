@@ -15,7 +15,7 @@ public class ChargingStationServiceImp implements ChargingStationService{
     private ChargingStationRepository chargingStationRepository;
 
     @Override
-    public Integer postStation(ChargingStation chargingStation) {
+    public String postStation(ChargingStation chargingStation) {
         return chargingStationRepository.save(chargingStation).getStationId();
     }
 

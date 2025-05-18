@@ -13,18 +13,38 @@ java {
 	}
 }
 
+
+ext {
+	lombokVersion = "1.18.30"
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.modelmapper:modelmapper:3.2.0'
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+	implementation group: 'org.projectlombok', name:'lombok', version: "$lombokVersion"
+	compileOnly group: 'org.projectlombok', name:'lombok', version: "$lombokVersion"
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+	testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+	testImplementation group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.12.5'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0' // use 2.2.0 here
 	implementation 'org.springframework.boot:spring-boot-starter-web' // no explicit version needed, inherited from plugin
 }
