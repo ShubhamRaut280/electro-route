@@ -8,18 +8,18 @@ import raut.shubham.electroroute.services.ChargingStationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/chargingStation")
+@RequestMapping("/stations")
 public class ChargingStationController {
 
     @Autowired
     private ChargingStationService chargingStationService;
 
-    @PostMapping("/post")
+    @PostMapping("/add")
     public Integer postStation(@RequestBody ChargingStation chargingStation) {
         return chargingStationService.postStation(chargingStation);
     }
 
-    @GetMapping("/allList")
+    @GetMapping("/all")
     public List<ChargingStation> getStationList(){
         return chargingStationService.getStationList();
     }
