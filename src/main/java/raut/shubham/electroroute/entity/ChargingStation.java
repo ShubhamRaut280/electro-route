@@ -1,12 +1,10 @@
 package raut.shubham.electroroute.entity;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
@@ -20,8 +18,8 @@ import java.util.List;
 public class ChargingStation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String stationId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long stationId;
 
     @OneToOne
     private UserInfo owner;

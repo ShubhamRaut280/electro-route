@@ -20,15 +20,13 @@ import raut.shubham.electroroute.service.UserDetailsServiceImpl;
 import java.io.IOException;
 
 @Component
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 public class JwtAuthFilter extends OncePerRequestFilter
 {
 
-    @Autowired
     private final JwtService jwtService;
-    @Autowired
     private final UserDetailsServiceImpl userDetailsService;
 
 
