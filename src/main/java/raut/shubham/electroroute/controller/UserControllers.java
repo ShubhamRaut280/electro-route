@@ -10,18 +10,28 @@ import raut.shubham.electroroute.service.UserService;
 import java.util.Optional;
 
 @RestController
-
+@RequestMapping("/api/user")
 public class UserControllers {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/user")
+    @PostMapping("/add")
     public String saveUser(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
-    @PutMapping("/user/{id}")
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUser(@PathVariable String id){
+        Optional<User> userOptional = userService.findById(id);
+        if(userOptional.isEmpty()){
+            return new ResponseEntity<>("User Not found",HttpStatus.NOT_FOUND);
+        }else {
+            return new ResponseEntity<>(userOptional.get(), HttpStatus.OK);
+        }
+    }
+
+    @PutMapping("/update/{id}")
     public ResponseEntity<String> updateUser(@PathVariable String id, @RequestBody User user) {
         Optional<User> userOptional = userService.findById(id);
         if(userOptional.isEmpty()){

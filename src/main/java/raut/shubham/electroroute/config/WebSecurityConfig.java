@@ -30,6 +30,7 @@ public class WebSecurityConfig {
                                 "/docs",
                                 "/error",
                                 "/actuator/**"
+                                ,"/**"
                         ).permitAll()
                         .requestMatchers("/api/**").authenticated()
                 )
