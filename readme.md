@@ -44,21 +44,7 @@ Setup and Run
    http://localhost:8080/docs
 
 
-📂 Project Structure
 
-src/
-├── main/
-│   ├── java/com/electroroute/
-│   │   ├── config/          # Security & Swagger config
-│   │   ├── controller/      # REST API controllers
-│   │   ├── entity/           # JPA Entities
-│           └── dto/  #  Data Transfer Objects
-│   │   ├── repository/      # Spring Data Repositories
-│   │   └── service/         # Business services
-│   │   └── utility/         # utilities
-│   └── resources/
-│       └── application.properties  # Configuration file
-└── docker-compose.yml       # Docker Compose for MySQL container
 
 🤝 Contribution
 
