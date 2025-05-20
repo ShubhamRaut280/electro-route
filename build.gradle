@@ -35,7 +35,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.modelmapper:modelmapper:3.2.0'
-	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+//	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
 	implementation group: 'org.projectlombok', name:'lombok', version: "$lombokVersion"
 	compileOnly group: 'org.projectlombok', name:'lombok', version: "$lombokVersion"
 	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
@@ -47,6 +47,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0' // use 2.2.0 here
 	implementation 'org.springframework.boot:spring-boot-starter-web' // no explicit version needed, inherited from plugin
+	implementation 'com.h2database:h2'
+
 }
 
 tasks.named('test') {

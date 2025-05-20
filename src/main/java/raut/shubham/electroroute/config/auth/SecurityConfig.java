@@ -33,20 +33,21 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(CorsConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/swagger-ui/**",         // Swagger UI assets
-                                "/swagger-ui.html",
-                                "/swagger-ui/index.html",
-                                "/auth/**",
-                                "/docs",
-                                "/actuator/**",
-                                "/**"
-
-                        ).permitAll()
-                        .requestMatchers("/api/**").authenticated()
+//                        .requestMatchers(
+//                                "/swagger-ui/**",         // Swagger UI assets
+//                                "/swagger-ui.html",
+//                                "/swagger-ui/index.html",
+//                                "/auth/**",
+//                                "/docs",
+//                                "/actuator/**",
+//                                "/**"
+//
+//                        ).permitAll()
+//                        .requestMatchers("/api/**").authenticated()
+                                .anyRequest().permitAll()
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .httpBasic(Customizer.withDefaults())
+                .httpBasic(AbstractHttpConfigurer::disable)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .authenticationProvider(authenticationProvider())
                 .build();
