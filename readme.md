@@ -23,7 +23,7 @@ ElectroRoute is a secure, containerized Spring Boot backend application built fo
 
 Check out the live deployed backend:
 
-👉 Electro-Route Backend - https://electro-route-latest.onrender.com
+👉 Electro-Route Backend - https://electro-route-latest.onrender.com/docs
 
 🐳 Deploy with Docker Image
 
