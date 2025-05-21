@@ -20,6 +20,13 @@ ElectroRoute is a secure, containerized Spring Boot backend application built fo
 - Docker & Docker Compose
 - Swagger UI
 
+🌐 Live Demo
+
+Check out the live deployed backend
+
+👉 Electro-Route Backend -  [Live](https://electro-route-latest.onrender.com) 
+
+
 📋 Getting Started
 
 Prerequisites
